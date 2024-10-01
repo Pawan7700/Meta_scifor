@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<h2>Order {{ item.Item_name }}</h2>
+<img src="/media/{{ item.Image }}" alt="{{ item.Item_name }}">
+<p>{{ item.description }}</p>
+<p>Price: ₹{{ item.Price }}</p>
+
+<form method="post">
+    {% csrf_token %}  <!-- Add the CSRF token here -->
+
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" value="1" min="1">
+    </div>
+
+    <div class="form-group">
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="contact_number">Contact Number:</label>
+        <input type="tel" name="contact_number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea name="address" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="pincode">Pin code:</label>
+        <input type="text" name="pincode" required>
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Order Now</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

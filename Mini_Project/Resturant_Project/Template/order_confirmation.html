@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load multiply %}
+
+{% block main %}
+<h2>Order Confirmation</h2>
+<p>Thank you for your order, {{ order.customer_name }}!</p>
+<p>Order Details:</p>
+<ul>
+    <li>Item: {{ order.item.Item_name }}</li>
+    <li>Quantity: {{ order.quantity }}</li>
+    <li>Contact Number: {{ order.contact_number }}</li>
+    <li>Address: {{ order.address }}</li>
+    <li>Pincode: {{ order.pincode }}</li>
+</ul>
+
+<p>Total Price: ₹{{ order.quantity | multiply:order.item.Price }}</p>
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <script>alert("{{ message }}");</script>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}
+
+

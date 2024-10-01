@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+    <script>
+        alert('{{ message }}');
+        {% if message.tags == 'success' %}
+            window.location = "{% url 'view_doctor' %}";
+        {% endif %}
+    </script>
+    {% endfor %}
+{% endif %}
+
+<div class="container">
+    <h2 class="text-center">Add Doctor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Doctor Name</label>
+        <input type="text" class="form-control" name="name" required />
+        <label>Mobile</label>
+        <input type="text" class="form-control" name="mobile" required />
+        <label>Special</label>
+        <input type="text" class="form-control" name="special" required />
+
+        <input type="submit" value="Submit" class="form-control btn btn-primary" />
+    </form>
+</div>
+
+{% endblock content %}
