@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HMS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Meta_All_Projects" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Restaurant" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Restaurant/Meta-Scifor" vcs="Git" />
+  </component>
+</project>
