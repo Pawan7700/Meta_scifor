@@ -11,7 +11,6 @@ class Patient(models.Model):
     gender = models.CharField(max_length=10)
     mobile = models.IntegerField(null=True)
     address = models.TextField()
-    # kjuytguhjkml
 
 class Appointment(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
